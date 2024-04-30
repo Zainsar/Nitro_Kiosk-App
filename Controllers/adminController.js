@@ -1,8 +1,8 @@
 const AdminModel = require("../model/superadminmodel.js");
 const FranchiseModel = require("../model/franchisemodel.js");
-const { Admin } = require("../Middleware/generateToken.js");
+const { admintoken } = require("../Middleware/generateToken.js");
 const bcrypt = require("bcryptjs");
-const Kiosk = require("../model/kiosk.js");
+const KioskModel = require("../model/kiosk.js");
 
 const add_Admin = async (req, res) => {
     try {
@@ -41,10 +41,11 @@ const add_Admin = async (req, res) => {
 const updateAdminProfile = async (req, res) => {
     try {
 
-        const { aid, username, address, phone } = req.body;
+        const { aid, username, age, address, phone } = req.body;
 
         const admin = await AdminModel.update({
             username: username,
+            Age: age,
             address: address,
             phone: phone
         }, {
@@ -188,7 +189,7 @@ const loginAdmin = async (req, res) => {
             });
         }
 
-        const token = Admin;
+        const token = admintoken(admin)
 
         res.status(200).json({
             success: true,
@@ -209,37 +210,6 @@ const loginAdmin = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Error in Login Admin API",
-            error: error.message,
-        });
-    }
-};
-
-const deleteAdmin = async (req, res) => {
-    try {
-
-        const adminId = req.body.aid;
-
-        const admin = await AdminModel.findOne(adminId);
-
-        if (!admin) {
-            return res.status(404).json({
-                success: false,
-                message: "Admin not found",
-            });
-        }
-
-        await admin.destroy();
-
-        res.status(200).json({
-            success: true,
-            message: "Admin deleted successfully",
-        });
-    }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({
-            success: false,
-            message: "Error in Delete Admin API",
             error: error.message,
         });
     }
@@ -308,36 +278,6 @@ const AllFranchise = async (req, res) => {
     }
 };
 
-const OneFranchise = async (req, res) => {
-    try {
-
-        const Franchise = await FranchiseModel.findByPk(req.body.fid);
-
-        if (!Franchise) {
-            return res.status(404).json({
-                success: false,
-                message: "Franchise Not Found",
-            });
-        }
-
-        Franchise.password = undefined;
-
-        res.status(200).json({
-            success: true,
-            message: "Franchise Data Found Successfully",
-            Franchise,
-        });
-    }
-    catch (error) {
-        console.log(error);
-        res.status(500).json({
-            success: false,
-            message: "Error in Get One Franchise API",
-            error: error.message,
-        });
-    }
-};
-
 const deleteFranchise = async (req, res) => {
     try {
 
@@ -369,18 +309,110 @@ const deleteFranchise = async (req, res) => {
     }
 };
 
-const getFranchiseKiosk = async (req, res) => {
+const FranchiseKiosk = async (req, res) => {
     try {
 
         const data = await FranchiseModel.findOne({
             where: { fid: req.body.franchiseId },
-            include: [{ model: Kiosk }]
+            include: [{ model: KioskModel }]
         });
 
         res.status(200).json({
             success: true,
-            message: "Franchise Cources get successfully",
+            message: "Franchise Kisok get successfully",
             data: data
+        });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Error in Franchise Kiosk API",
+            error: error.message,
+        });
+    }
+}
+
+const add_Kiosk = async (req, res) => {
+    try {
+
+        const salt = bcrypt.genSaltSync(10);
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+        const Kiosk = new KioskModel({
+            franchiseId: req.body.fid,
+            email: req.body.email,
+            password: hashedPassword,
+            noOfTap: req.body.noOfTap
+        });
+
+        const newKiosk = await Kiosk.save();
+
+        res.status(200).json({
+            success: true,
+            message: "Kiosk Created Successfully",
+            newKiosk
+        });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            name: 'Kiosk Email unique',
+            error: error.message
+        });
+    }
+};
+
+const AllKiosk = async (req, res) => {
+    try {
+
+        const Kiosk = await KioskModel.findAll();
+
+        if (!Kiosk || Kiosk.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "Kiosk Not Found",
+            });
+        }
+
+        Kiosk.password = undefined;
+
+        res.status(200).json({
+            success: true,
+            message: "All Kiosk get Successfully",
+            Kiosk,
+        });
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "Error in Get All Kiosk API",
+            error: error.message,
+        });
+    }
+};
+
+const deleteKiosk = async (req, res) => {
+    try {
+
+        const kid = req.body.kid;
+
+        const Kiosk = await KioskModel.findByPk(kid);
+
+        if (!Kiosk) {
+            return res.status(404).json({
+                success: false,
+                message: "Kiosk not found",
+            });
+        }
+
+        await Kiosk.destroy();
+
+        res.status(200).json({
+            success: true,
+            message: "Kiosk deleted successfully",
         });
     }
     catch (error) {
@@ -391,17 +423,19 @@ const getFranchiseKiosk = async (req, res) => {
             error: error.message,
         });
     }
-}
+};
+
 module.exports = {
     add_Admin,
     updateAdminProfile,
     updatePassword,
     resetPassword,
     loginAdmin,
-    deleteAdmin,
     add_Franchise,
     AllFranchise,
-    OneFranchise,
     deleteFranchise,
-    getFranchiseKiosk
+    FranchiseKiosk,
+    add_Kiosk,
+    AllKiosk,
+    deleteKiosk
 };

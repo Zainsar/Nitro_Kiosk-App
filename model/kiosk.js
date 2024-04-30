@@ -1,8 +1,11 @@
 const db = require("../config/dbconfig.js")
 const Sequelize = require("sequelize");
+const Franchise = require("./franchisemodel.js");
+const KioskProduct = require("./kioskproduct.js");
+const Location = require("./kiosklocation.js");
 
 const Kiosk = db.define("Kiosk", {
-    k_id: {
+    kid: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
@@ -25,5 +28,13 @@ const Kiosk = db.define("Kiosk", {
     }
 
 })
+
+Franchise.hasMany(Kiosk, { foreignKey: 'franchiseId' });
+Kiosk.belongsTo(Franchise, { foreignKey: 'franchiseId' });
+
+Kiosk.hasMany(KioskProduct, { foreignKey: "kioskId" })
+
+Kiosk.hasMany(Location, { foreignKey: 'kid' });
+Location.belongsTo(Kiosk, { foreignKey: 'kid' });
 
 module.exports = Kiosk;

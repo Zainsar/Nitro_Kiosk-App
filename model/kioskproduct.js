@@ -1,5 +1,6 @@
 const db = require("../config/dbconfig.js")
 const Sequelize = require("sequelize");
+const Product = require("./ProductModel.js");
 
 const KioskProduct = db.define("Kiosk_Product", {
     kpId: {
@@ -21,5 +22,7 @@ const KioskProduct = db.define("Kiosk_Product", {
     }
 
 })
+
+KioskProduct.belongsTo(Product, { foreignKey: "productId" })
 
 module.exports = KioskProduct;

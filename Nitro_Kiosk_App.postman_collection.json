@@ -1,0 +1,1135 @@
+{
+	"info": {
+		"_postman_id": "035063de-4e43-40c0-8084-5782796206bb",
+		"name": "Nitro_Kiosk_App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33994307"
+	},
+	"item": [
+		{
+			"name": "SuperAdmin",
+			"item": [
+				{
+					"name": "SignupAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zainsarfraz82@gmail.com\",\r\n    \"username\":\"Admin\",\r\n    \"password\":\"Admin\",\r\n    \"age\":22,\r\n    \"address\":\"House no l-354\",\r\n    \"phone\":\"03172667345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/signupadmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"signupadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zainsarfraz82@gmail.com\",\r\n    \"password\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/loginadmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"loginadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aid\":\"71c70655-81ed-4b70-b18b-9028721479e7\",\r\n    \"username\":\"Admin\",\r\n    \"age\":22,\r\n    \"address\":\"House no l-354\",\r\n    \"phone\":\"03172667345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/updateprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"updateprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updatepassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aid\":\"71c70655-81ed-4b70-b18b-9028721479e7\",\r\n    \"oldPassword\":\"Admin\",\r\n    \"newPassword\":\"Admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/updatepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"updatepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aid\":\"71c70655-81ed-4b70-b18b-9028721479e7\",\r\n    \"newPassword\":\"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/resetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFranchise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"email\":\"zainsarfraz54@gmail.com\",\r\n//     \"username\":\"Franchise\",\r\n//     \"password\":\"Franchise\",\r\n//     \"address\":\"House no l-355\",\r\n//     \"phone\":\"03172667346\"\r\n// }\r\n// {\r\n//     \"email\":\"zainsarfraz44@gmail.com\",\r\n//     \"username\":\"Franchise2\",\r\n//     \"password\":\"Franchise\",\r\n//     \"address\":\"House no l-355\",\r\n//     \"phone\":\"03172667346\"\r\n// }\r\n// {\r\n//     \"email\":\"zainsarfraz4@gmail.com\",\r\n//     \"username\":\"Franchise3\",\r\n//     \"password\":\"Franchise\",\r\n//     \"address\":\"House no l-355\",\r\n//     \"phone\":\"03172667346\"\r\n// }\r\n{\r\n    \"email\":\"zainsarfraz42@gmail.com\",\r\n    \"username\":\"Franchise4\",\r\n    \"password\":\"Franchise\",\r\n    \"address\":\"House no l-355\",\r\n    \"phone\":\"03172667346\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/createfranchise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"createfranchise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Franchise",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/allfranchise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"allfranchise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Franchise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fid\":\"52403392-52b2-401c-82b5-8b75ac4b4557\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/deletefranchise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"deletefranchise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Franchise Kiosk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\":\"9383414e-25c8-4305-9779-71bbc5b2ac77\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/franchisekiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"franchisekiosk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Kiosk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fid\":\"9383414e-25c8-4305-9779-71bbc5b2ac77\",\r\n    \"email\":\"kiosk11@gmail.com\",\r\n    \"password\":\"kiosk\",\r\n    \"noOfTap\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/createkiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"createkiosk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Kiosk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/allkiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"allkiosk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Kisok",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjcxYzcwNjU1LTgxZWQtNGI3MC1iMThiLTkwMjg3MjE0NzllNyIsImVtYWlsIjoiemFpbnNhcmZyYXo4MkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IkFkbWluIiwicm9sbCI6MCwiaWF0IjoxNzE0NDc1MzczLCJleHAiOjE3MTQ1NjE3NzN9.XiF7WnZi3DUgu45sM3hfgpjLDID57alG3-s7BGXxFPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"9d75e696-0c82-4c79-acf7-bc6bfdbd0121\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/superadmin/deletekiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"superadmin",
+								"deletekiosk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Franchise",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zainsarfraz54@gmail.com\",\r\n    \"password\":\"Franchise\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/loginfranchise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"loginfranchise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userid\":\"9383414e-25c8-4305-9779-71bbc5b2ac77\",\r\n    \"username\":\"Franchise1\",\r\n    \"address\":\"House no l-355\",\r\n    \"phone\":\"03172667355\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/updateprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"updateprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userid\":\"9383414e-25c8-4305-9779-71bbc5b2ac77\",\r\n    \"oldPassword\":\"Franchise\",\r\n    \"newPassword\":\"Franchise3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/updatepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"updatepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"9383414e-25c8-4305-9779-71bbc5b2ac77\",\r\n    \"newPassword\":\"Franchise\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/resetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Kiosk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"18408053-199e-43eb-9282-1b64a9c56f07\",\r\n    \"noOfTap\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/updatekiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"updatekiosk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Kiosk Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kId\":\"18408053-199e-43eb-9282-1b64a9c56f07\",\r\n    \"oldPassword\":\"kiosk\",\r\n    \"newPassword\":\"kiosk123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/updatekioskpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"updatekioskpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Meadow Land Chai\",\r\n    \"logo\":\"https://in.pinterest.com/amsmasoodams/chai/\",\r\n    \"retailprice\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/addproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"addproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pid\":\"6712e970-0f17-4616-952a-78a81e4517d9\",\r\n    \"name\":\"Meadow Land Chai\",\r\n    \"logo\":\"https://in.pinterest.com/amsmasoodams/chai/\",\r\n    \"retailprice\":\"15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/updateproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"updateproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/allproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"allproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pid\":\"694364d3-12ce-4fb8-8dfc-43fefd43ecbe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/deleteproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"deleteproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"18408053-199e-43eb-9282-1b64a9c56f07\",\r\n    \"pid\":\"6712e970-0f17-4616-952a-78a81e4517d9\",\r\n    \"noOfTap\":\"1\",\r\n    \"mrp\":\"25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/assignproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"assignproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kiosk Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kioskId\":\"18408053-199e-43eb-9282-1b64a9c56f07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/kioskproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"kioskproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"18408053-199e-43eb-9282-1b64a9c56f07\",\r\n    \"location\":\"North Karachi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/addlocation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"addlocation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kiosk Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xsIjoxLCJpYXQiOjE3MTQ0NzcxMjIsImV4cCI6MTcxNDU2MzUyMn0.x_QGnrSRdHoJAKxdt12Lu6VShuFLPlepZMsv9jWj3Tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"18408053-199e-43eb-9282-1b64a9c56f07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/franchise/kiosklocation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"franchise",
+								"kiosklocation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kiosk",
+			"item": [
+				{
+					"name": "Kiosk login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kiosk11@gmail.com\",\r\n    \"password\":\"kiosk123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/kiosk/loginKiosk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"kiosk",
+								"loginKiosk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testing",
+			"item": [
+				{
+					"name": "testapi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/test/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"test",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/nitro/test/test2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"nitro",
+								"test",
+								"test2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

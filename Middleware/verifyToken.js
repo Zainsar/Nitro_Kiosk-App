@@ -43,7 +43,28 @@ const verifytokenFranchise = (req, res, next) => {
     }
 };
 
+const verifytokenKiosk = (req, res, next) => {
+    const authheader = req.headers.authorization;
+    if (authheader) {
+        const token = authheader.split(" ")[1];
+        jwt.verify(token, process.env.JWT_SECRET3, (err, KioskModel) => {
+            if (err) {
+                return res.status(401).json({
+                    message: 'Token is not valid!'
+                });
+            }
+            req.KioskModel = KioskModel;
+            next();
+        });
+    } else {
+        return res.status(401).json({
+            message: 'You are not authenticated'
+        });
+    }
+};
+
 module.exports = {
     verifytokenAdmin,
-    verifytokenFranchise
+    verifytokenFranchise,
+    verifytokenKiosk
 }

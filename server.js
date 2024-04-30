@@ -4,6 +4,8 @@ const db = require("./config/dbconfig.js")
 const bodyParser = require('body-parser')
 const adminrouter = require('./Routes/adminroutes.js')
 const franchiserouter = require('./Routes/franchiseroute.js')
+const Kisokrouter = require('./Routes/Kioskroute.js')
+const testrouter = require('./Routes/testroute.js')
 const dontenv = require("dotenv")
 
 dontenv.config()
@@ -15,8 +17,8 @@ const corOptions = {
 }
 
 // server
-// 
-db.sync({ alter: true })
+// { alter: true }
+db.sync()
     .then(() => {
         app.listen(PORT, console.log(`Server started on port ${PORT}`));
     })
@@ -41,6 +43,8 @@ app.get('/api', (req, res) => {
 // Router
 app.use('/api/nitro/superadmin', adminrouter)
 app.use('/api/nitro/franchise', franchiserouter)
+app.use('/api/nitro/kiosk', Kisokrouter)
+app.use('/api/nitro/test', testrouter)
 
 //port
 const PORT = process.env.PORT || 8080

@@ -1,22 +1,34 @@
 const express = require("express");
-const { add_Admin, getAdminController, updateAdminController, updatePasswordController,
-    resetPasswordController, loginAdmin, deleteAdminController } = require("../Controllers/adminController.js");
-const Auth2 = require("../Middleware/verifyToken.js");
+const { add_Admin, loginAdmin, updateAdminProfile, updatePassword, resetPassword, add_Franchise,
+    AllFranchise, deleteFranchise, FranchiseKiosk, add_Kiosk, AllKiosk, deleteKiosk,
+    test
+} = require("../Controllers/adminController.js");
+const { verifytokenAdmin } = require("../Middleware/verifyToken.js");
 
 const router = express.Router();
 
-router.post("/addadmin", add_Admin);
+router.post("/signupadmin", add_Admin);
 
-router.get("/getAdmin", Auth2, getAdminController);
+router.post("/loginadmin", loginAdmin);
 
-router.put("/updateAdmin", Auth2, updateAdminController);
+router.put("/updateprofile", verifytokenAdmin, updateAdminProfile);
 
-router.post("/updatePassword", Auth2, updatePasswordController);
+router.post("/updatepassword", verifytokenAdmin, updatePassword);
 
-router.post("/resetPassword", Auth2, resetPasswordController);
+router.post("/resetpassword", verifytokenAdmin, resetPassword);
 
-router.post("/loginAdmin", loginAdmin);
+router.post("/createfranchise", verifytokenAdmin, add_Franchise);
 
-router.delete("/deleteAdmin", Auth2, deleteAdminController);
+router.get("/allfranchise", verifytokenAdmin, AllFranchise);
+
+router.delete("/deletefranchise", verifytokenAdmin, deleteFranchise);
+
+router.post("/franchisekiosk", verifytokenAdmin, FranchiseKiosk);
+
+router.post("/createkiosk", verifytokenAdmin, add_Kiosk);
+
+router.get("/allkiosk", verifytokenAdmin, AllKiosk);
+
+router.delete("/deletekiosk", verifytokenAdmin, deleteKiosk);
 
 module.exports = router;

@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 
-const Admin = (admin) => {
+const admintoken = (admin) => {
     const payload = {
-        aid: admin.admin_id,
+        admin_id: admin.admin_id,
         email: admin.email,
         username: admin.username,
         roll: 0
@@ -11,7 +11,9 @@ const Admin = (admin) => {
     const options = {
         expiresIn: '24h'
     };
-    return jwt.sign(payload, secretKey, options);
+    let token = jwt.sign(payload, secretKey, options);
+    return token
+
 };
 
 const Franchise = (Franchise) => {
@@ -28,7 +30,21 @@ const Franchise = (Franchise) => {
     return jwt.sign(payload, secretKey, options);
 };
 
+const Kiosk = (Kiosk) => {
+    const payload = {
+        kid: Kiosk.kid,
+        email: Kiosk.email,
+        roll: 3
+    };
+    const secretKey = process.env.JWT_SECRET3;
+    const options = {
+        expiresIn: '24h'
+    };
+    return jwt.sign(payload, secretKey, options);
+};
+
 module.exports = {
-    Admin,
-    Franchise
+    admintoken,
+    Franchise,
+    Kiosk
 }
